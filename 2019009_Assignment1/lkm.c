@@ -17,7 +17,7 @@ MODULE_VERSION("1.00");
 static unsigned int hook_func(void *priv,struct sk_buff *skb,const struct nf_hook_state *state)
 {
 	struct iphdr *iph;
-	struct tcpphdr *tcph;
+	struct tcphdr *tcph;
 	if (!skb) {
 		return NF_ACCEPT;
     }

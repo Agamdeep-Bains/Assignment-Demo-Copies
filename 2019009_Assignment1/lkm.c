@@ -25,7 +25,7 @@ static unsigned int hook_func(void *priv,struct sk_buff *skb,const struct nf_hoo
 	if(iph->protocol==IPPROTO_UDP) {
 		return NF_ACCEPT;
 	}
-	if(iph->protocol==IPPROTO_TCP)
+	if(iph->protocol==IPPROTO_TCP) {
 		tcph=tcp_hdr(skb);
         if(tcph->syn==0 && tcph->ack==0 && tcph->urg==0 && tcph->rst==0 && tcph->fin==0 && tcph->psh==0) {
             printk(KERN_INFO "Dropped null scan packets\n");
